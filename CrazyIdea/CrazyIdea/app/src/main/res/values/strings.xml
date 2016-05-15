@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CrazyIdea</string>
+    <string name="main_show_time">显示时间</string>
 </resources>

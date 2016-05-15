@@ -11,7 +11,16 @@
     tools:context="com.crazy.lhp.crazyidea.MainActivity">
 
     <TextView
+        android:id="@+id/tv_main_showtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"/>
+    <Button
+        android:id="@+id/btn_main_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_main_showtime"
+        android:text="@string/main_show_time"
+        />
+
 </RelativeLayout>
