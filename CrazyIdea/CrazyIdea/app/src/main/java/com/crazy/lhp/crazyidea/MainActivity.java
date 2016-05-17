@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "lianghp MainActivity";
 
@@ -19,10 +19,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG,"MainActivity onCreate()");
+        Log.d(TAG, "MainActivity onCreate()");
         setContentView(R.layout.activity_main);
-        Button btn = (Button)findViewById(R.id.btn_main_show);
-        clickHandler(btn);
     }
     @Override
     protected void onResume() {
@@ -49,8 +47,15 @@ public class MainActivity extends Activity {
         super.onDestroy();
         Log.d(TAG,"MainActivity onDestory()");
     }
-    public void clickHandler(View source){
-        TextView tv = (TextView)findViewById(R.id.tv_main_showtime);
-        tv.setText("Hello Android - " + new java.util.Date());
+
+    @Override
+    public void onClick(View view) {
+        int Id = view.getId();
+        switch (Id){
+            case 0:
+                break;
+            default:
+                break;
+        }
     }
 }

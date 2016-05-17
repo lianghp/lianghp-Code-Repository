@@ -10,17 +10,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.crazy.lhp.crazyidea.MainActivity">
 
-    <TextView
-        android:id="@+id/tv_main_showtime"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TableLayout
+            android:id="@+id/tl_main_test_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="1"
+            android:stretchColumns="2">
+        </TableLayout>
+        <TableLayout
+            android:id="@+id/tl_main_test_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:collapseColumns="1">
+        </TableLayout>
+        <TableLayout
+            android:id="@+id/tl_main_test_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2">
+        </TableLayout>
+    </LinearLayout>
+
+    <com.crazy.lhp.crazyidea.custom.DrawView
+        android:id="@+id/custom_draw_circle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
-    <Button
-        android:id="@+id/btn_main_show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_main_showtime"
-        android:text="@string/main_show_time"
-        />
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
