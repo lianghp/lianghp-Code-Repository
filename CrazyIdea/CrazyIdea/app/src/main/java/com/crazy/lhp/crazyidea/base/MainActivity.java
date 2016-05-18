@@ -1,4 +1,4 @@
-package com.crazy.lhp.crazyidea;
+package com.crazy.lhp.crazyidea.base;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,9 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.crazy.lhp.crazyidea.R;
 import com.crazy.lhp.crazyidea.custom.CustomActivity;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "lianghp MainActivity";
 
@@ -55,7 +56,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public void initwidget(){
+        Log.d(TAG, "MainActivity initwidget()");
         btn_tl_test_1 = (Button)findViewById(R.id.btn_tl_test_1);
+        btn_tl_test_1.setOnClickListener(this);
     }
 
     @Override
@@ -63,6 +66,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         int Id = view.getId();
         switch (Id){
             case R.id.btn_tl_test_1:
+                Log.d(TAG, "MainActivity initwidget()");
                 Intent intent = new Intent(this, CustomActivity.class);
                 startActivity(intent);
                 break;
