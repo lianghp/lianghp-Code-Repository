@@ -21,6 +21,10 @@
             android:name=".custom.CustomActivity"
             android:launchMode="singleTop">
         </activity>
+        <activity
+            android:name=".layout.FrameActivity"
+            android:launchMode="singleTop">
+        </activity>
     </application>
 
 </manifest>

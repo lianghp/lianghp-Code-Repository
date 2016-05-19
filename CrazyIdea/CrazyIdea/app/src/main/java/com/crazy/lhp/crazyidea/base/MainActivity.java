@@ -10,12 +10,14 @@ import android.widget.TextView;
 
 import com.crazy.lhp.crazyidea.R;
 import com.crazy.lhp.crazyidea.custom.CustomActivity;
+import com.crazy.lhp.crazyidea.layout.FrameActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "lianghp MainActivity";
 
     private Button btn_tl_test_1;//自定义控件，小球随着手指在屏幕上移动而移动
+    private Button btn_tl_tr_test_1; // 霓虹灯效果 FrameLayout
 
     @Override
     protected void onStart() {
@@ -58,7 +60,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void initwidget(){
         Log.d(TAG, "MainActivity initwidget()");
         btn_tl_test_1 = (Button)findViewById(R.id.btn_tl_test_1);
+        btn_tl_tr_test_1 = (Button)findViewById(R.id.btn_tl_tr_test_1);
+
         btn_tl_test_1.setOnClickListener(this);
+        btn_tl_tr_test_1.setOnClickListener(this);
     }
 
     @Override
@@ -69,6 +74,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 Log.d(TAG, "MainActivity initwidget()");
                 Intent intent = new Intent(this, CustomActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_tl_tr_test_1:
+                Intent intent1 = new Intent(this, FrameActivity.class);
+                startActivity(intent1);
                 break;
             default:
                 break;

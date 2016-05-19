@@ -34,7 +34,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/main_tablelayout_test_2"/>
-                    <Button
+                    <!--<Button
                         android:id="@+id/btn_tl_tr_test_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                         android:id="@+id/btn_tl_tr_test_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/main_tablelayout_test_4"/>
+                        android:text="@string/main_tablelayout_test_4"/>-->
                 </TableRow>
             </TableLayout>
             <TableLayout

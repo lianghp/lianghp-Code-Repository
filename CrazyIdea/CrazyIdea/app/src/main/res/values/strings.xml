@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CrazyIdea</string>
     <string name="main_tablelayout_test_1">自定义控件</string>
-    <string name="main_tablelayout_test_2">普通按钮</string>
+    <string name="main_tablelayout_test_2">霓虹灯效果</string>
     <string name="main_tablelayout_test_2_1">普通按钮1</string>
     <string name="main_tablelayout_test_2_2">普通按钮2</string>
     <string name="main_tablelayout_test_2_3">普通按钮3</string>
