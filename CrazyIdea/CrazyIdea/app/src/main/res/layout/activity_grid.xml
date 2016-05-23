@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="6"
+    android:columnCount="4"
+    android:id="@+id/gl_root">
+    <TextView
+        android:id="@+id/tv_test_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:background="@color/colorAshen"
+        android:text="0"
+        android:textSize="@dimen/font_size_50"
+        android:layout_marginLeft="@dimen/layout_padding_2"
+        android:layout_marginRight="@dimen/layout_padding_2"
+        android:padding="@dimen/layout_padding_3"
+        android:textColor="@color/colorBlack"/>
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_marginLeft="@dimen/layout_padding_2"
+        android:layout_marginRight="@dimen/layout_padding_2"
+        android:padding="@dimen/layout_padding_3"
+        android:text="@string/grid_btn_clear"
+        android:background="@color/colorBlue_light"
+        android:textColor="@color/colorRed"/>
+
+</GridLayout>

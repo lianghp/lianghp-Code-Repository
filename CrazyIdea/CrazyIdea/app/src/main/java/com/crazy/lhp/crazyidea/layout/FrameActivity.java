@@ -5,6 +5,8 @@ package com.crazy.lhp.crazyidea.layout;/**
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.crazy.lhp.crazyidea.R;
@@ -20,11 +22,11 @@ import java.util.TimerTask;
  * Note:  霓虹灯效果!
  * FIXME
  */
-public class FrameActivity extends BaseActivity{
+public class FrameActivity extends BaseActivity implements View.OnClickListener {
     private final static String TAG = "lianghp FrameActivity";
 
     private int currentColor = 0;
-
+    private Button btn_back;
     //定义一个颜色数组
     final int[] colors = new int[]{
             R.color.colorRed,
@@ -71,5 +73,20 @@ public class FrameActivity extends BaseActivity{
                 handler.sendEmptyMessage(0x123);
             }
         }, 0, 200);
+
+        btn_back = (Button)findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id){
+            case R.id.btn_back:
+                finish();
+                break;
+            default:
+                break;
+        }
     }
 }

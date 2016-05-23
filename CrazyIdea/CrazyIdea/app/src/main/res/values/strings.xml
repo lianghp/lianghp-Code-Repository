@@ -2,9 +2,13 @@
     <string name="app_name">CrazyIdea</string>
     <string name="main_tablelayout_test_1">自定义控件</string>
     <string name="main_tablelayout_test_2">霓虹灯效果</string>
-    <string name="main_tablelayout_test_2_1">普通按钮1</string>
-    <string name="main_tablelayout_test_2_2">普通按钮2</string>
+    <string name="main_tablelayout_test_3">计算器页面</string>
+    <string name="main_tablelayout_test_4">各种TextView</string>
+    <string name="main_tablelayout_test_4_1">带边框的文本</string>
+    <string name="main_tablelayout_test_4_2">圆角边框，渐变背景的文本</string>
     <string name="main_tablelayout_test_2_3">普通按钮3</string>
-    <string name="main_tablelayout_test_3">收缩的按钮</string>
-    <string name="main_tablelayout_test_4">拉伸的按钮</string>
+    <string name="grid_btn_clear">清除</string>
+    <string name="textview_test_1">这是个测试</string>
+    <string name="textview_test_2">这是个测试 android java android java真的是个测试</string>
+    <string name="textview_test_3">邮件：lianghp@meixing.com,电话：18888888888</string>
 </resources>
