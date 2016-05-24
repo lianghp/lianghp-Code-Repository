@@ -33,6 +33,10 @@
             android:name=".textview.Text_ViewActivity"
             android:launchMode="singleTop">
         </activity>
+        <activity
+            android:name=".textview.Edit_TextViewActivity"
+            android:launchMode="singleTop">
+        </activity>
     </application>
 
 </manifest>

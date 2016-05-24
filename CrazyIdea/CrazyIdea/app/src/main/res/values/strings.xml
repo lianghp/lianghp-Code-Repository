@@ -6,9 +6,16 @@
     <string name="main_tablelayout_test_4">各种TextView</string>
     <string name="main_tablelayout_test_4_1">带边框的文本</string>
     <string name="main_tablelayout_test_4_2">圆角边框，渐变背景的文本</string>
-    <string name="main_tablelayout_test_2_3">普通按钮3</string>
+    <string name="main_tablelayout_test_4_3">登陆界面</string>
     <string name="grid_btn_clear">清除</string>
     <string name="textview_test_1">这是个测试</string>
     <string name="textview_test_2">这是个测试 android java android java真的是个测试</string>
     <string name="textview_test_3">邮件：lianghp@meixing.com,电话：18888888888</string>
-</resources>
+    <string name="textview_test_4">用户名：</string>
+    <string name="textview_test_4_1">请填写登录帐号</string>
+    <string name="textview_test_4_2">帐号：</string>
+    <string name="textview_test_4_3">年龄：</string>
+    <string name="textview_test_4_4">生日：</string>
+    <string name="textview_test_4_5">电话号码：</string>
+    <string name="textview_test_4_6">请填写电话号码</string>
+    </resources>
