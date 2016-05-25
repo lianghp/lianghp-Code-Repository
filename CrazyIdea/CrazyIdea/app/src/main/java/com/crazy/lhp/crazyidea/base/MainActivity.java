@@ -14,6 +14,7 @@ import com.crazy.lhp.crazyidea.layout.FrameActivity;
 import com.crazy.lhp.crazyidea.layout.GridTestLayout;
 import com.crazy.lhp.crazyidea.textview.Edit_TextViewActivity;
 import com.crazy.lhp.crazyidea.textview.Text_ViewActivity;
+import com.crazy.lhp.crazyidea.textview.Toggle_buttonActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button btn_tl_tr_test_2;//计算器页面(一个失败的例子)
     private Button btn_tl_test_2;//各种textView
     private Button btn_tl_tr_test_4;//模仿登陆界面
+    private Button btn_tl_tr_test_5;//横竖屏切换
 
 
     @Override
@@ -71,12 +73,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btn_tl_tr_test_2 = (Button)findViewById(R.id.btn_tl_tr_test_2);
         btn_tl_test_2 = (Button)findViewById(R.id.btn_tl_test_2);
         btn_tl_tr_test_4 = (Button)findViewById(R.id.btn_tl_tr_test_4);
+        btn_tl_tr_test_5 = (Button)findViewById(R.id.btn_tl_tr_test_5);
 
         btn_tl_test_1.setOnClickListener(this);
         btn_tl_tr_test_1.setOnClickListener(this);
         btn_tl_tr_test_2.setOnClickListener(this);
         btn_tl_test_2.setOnClickListener(this);
         btn_tl_tr_test_4.setOnClickListener(this);
+        btn_tl_tr_test_5.setOnClickListener(this);
     }
 
     @Override
@@ -103,6 +107,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn_tl_tr_test_4:
                 Intent intent4 = new Intent(this, Edit_TextViewActivity.class);
                 startActivity(intent4);
+                break;
+            case R.id.btn_tl_tr_test_5:
+                Intent intent5 = new Intent(this, Toggle_buttonActivity.class);
+                startActivity(intent5);
                 break;
             default:
                 break;

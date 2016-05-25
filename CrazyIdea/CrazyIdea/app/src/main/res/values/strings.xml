@@ -18,4 +18,10 @@
     <string name="textview_test_4_4">生日：</string>
     <string name="textview_test_4_5">电话号码：</string>
     <string name="textview_test_4_6">请填写电话号码</string>
+    <string name="togglebutton_test_5">横向排列</string>
+    <string name="togglebutton_test_5_1">纵向排列</string>
+    <string name="togglebutton_test_5_2">测试按钮0</string>
+    <string name="togglebutton_test_5_3">测试按钮1</string>
+    <string name="togglebutton_test_5_4">测试按钮2</string>
+    <string name="togglebutton_test_5_0">横竖屏切换</string>
     </resources>
