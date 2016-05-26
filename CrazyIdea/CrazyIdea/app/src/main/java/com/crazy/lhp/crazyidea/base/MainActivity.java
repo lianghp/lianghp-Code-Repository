@@ -13,6 +13,7 @@ import com.crazy.lhp.crazyidea.custom.CustomActivity;
 import com.crazy.lhp.crazyidea.layout.FrameActivity;
 import com.crazy.lhp.crazyidea.layout.GridTestLayout;
 import com.crazy.lhp.crazyidea.textview.Edit_TextViewActivity;
+import com.crazy.lhp.crazyidea.textview.Text_ClockActivity;
 import com.crazy.lhp.crazyidea.textview.Text_ViewActivity;
 import com.crazy.lhp.crazyidea.textview.Toggle_buttonActivity;
 
@@ -26,6 +27,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button btn_tl_test_2;//各种textView
     private Button btn_tl_tr_test_4;//模仿登陆界面
     private Button btn_tl_tr_test_5;//横竖屏切换
+    private Button btn_tl_tr_test_6;//时钟显示
 
 
     @Override
@@ -74,6 +76,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btn_tl_test_2 = (Button)findViewById(R.id.btn_tl_test_2);
         btn_tl_tr_test_4 = (Button)findViewById(R.id.btn_tl_tr_test_4);
         btn_tl_tr_test_5 = (Button)findViewById(R.id.btn_tl_tr_test_5);
+        btn_tl_tr_test_6 = (Button)findViewById(R.id.btn_tl_tr_test_6);
 
         btn_tl_test_1.setOnClickListener(this);
         btn_tl_tr_test_1.setOnClickListener(this);
@@ -81,6 +84,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btn_tl_test_2.setOnClickListener(this);
         btn_tl_tr_test_4.setOnClickListener(this);
         btn_tl_tr_test_5.setOnClickListener(this);
+        btn_tl_tr_test_6.setOnClickListener(this);
     }
 
     @Override
@@ -111,6 +115,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn_tl_tr_test_5:
                 Intent intent5 = new Intent(this, Toggle_buttonActivity.class);
                 startActivity(intent5);
+                break;
+            case R.id.btn_tl_tr_test_6:
+                Intent intent6 = new Intent(this, Text_ClockActivity.class);
+                startActivity(intent6);
                 break;
             default:
                 break;

@@ -2,7 +2,7 @@
     <string name="app_name">CrazyIdea</string>
     <string name="main_tablelayout_test_1">自定义控件</string>
     <string name="main_tablelayout_test_2">霓虹灯效果</string>
-    <string name="main_tablelayout_test_3">计算器页面</string>
+    <string name="main_tablelayout_test_3">计算器页面(失败)</string>
     <string name="main_tablelayout_test_4">各种TextView</string>
     <string name="main_tablelayout_test_4_1">带边框的文本</string>
     <string name="main_tablelayout_test_4_2">圆角边框，渐变背景的文本</string>
@@ -24,4 +24,7 @@
     <string name="togglebutton_test_5_3">测试按钮1</string>
     <string name="togglebutton_test_5_4">测试按钮2</string>
     <string name="togglebutton_test_5_0">横竖屏切换</string>
+    <string name="textclock_test_0">时钟显示</string>
+    <string name="textclock_test_1">开始</string>
+    <string name="textclock_test_2">停止</string>
     </resources>

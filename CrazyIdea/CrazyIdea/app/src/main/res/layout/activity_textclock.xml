@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layout_padding_3">
+    <AnalogClock
+        android:id="@+id/ac_test_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ac_test_1"/>
+    <TextClock
+        android:id="@+id/tc_test_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ac_test_0"
+        android:textSize="@dimen/font_size_24"
+        android:textColor="@color/colorPurple"
+        android:format12Hour="yyyy年MM月dd日 H:mma EEEE"
+        />
+    <AnalogClock
+        android:id="@+id/ac_test_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dial="@drawable/watch"
+        android:hand_minute="@drawable/hand"/>
+    <Chronometer
+        android:id="@+id/ch_test_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_24"
+        android:layout_below="@+id/tc_test_0"
+        android:textColor="@color/colorGreen_light"
+        />
+    <Button
+        android:id="@+id/btn_test_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textclock_test_1"
+        android:layout_below="@+id/ac_test_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"/>
+    <Button
+        android:id="@+id/btn_test_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textclock_test_2"
+        android:layout_below="@+id/btn_test_0"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"/>
+
+</RelativeLayout>
