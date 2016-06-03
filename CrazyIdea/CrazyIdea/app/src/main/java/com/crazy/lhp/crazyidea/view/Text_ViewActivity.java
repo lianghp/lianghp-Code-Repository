@@ -1,4 +1,4 @@
-package com.crazy.lhp.crazyidea.textview;/**
+package com.crazy.lhp.crazyidea.view;/**
  * Author：Lianghp on 2016/5/20 08:15
  */
 

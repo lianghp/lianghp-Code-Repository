@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layout_padding_3"
+    android:gravity="center_horizontal"
+    >
+    <Button
+        android:id="@+id/btn_imag_test_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_padding_2"
+        android:text="@string/imageview_test_0"
+        />
+    <Button
+        android:id="@+id/btn_imag_test_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_padding_2"
+        android:layout_toRightOf="@+id/btn_imag_test_0"
+        android:text="@string/imageview_test_1"
+        />
+    <Button
+        android:id="@+id/btn_imag_test_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_padding_2"
+        android:layout_toRightOf="@+id/btn_imag_test_1"
+        android:text="@string/imageview_test_2"
+        />
+    <ImageView
+        android:id="@+id/imag_test_0"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_padding_280"
+        android:layout_below="@id/btn_imag_test_0"
+        android:scaleType="fitCenter"
+        />
+    <ImageView
+        android:id="@+id/imag_test_1"
+        android:layout_width="@dimen/layout_padding_120"
+        android:layout_height="@dimen/layout_padding_120"
+        android:layout_below="@+id/imag_test_0"
+        android:layout_marginTop="@dimen/layout_padding_5"
+        android:background="@color/colorBlue"
+        />
+
+</RelativeLayout>

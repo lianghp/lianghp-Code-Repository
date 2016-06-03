@@ -30,19 +30,23 @@
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".textview.Text_ViewActivity"
+            android:name=".view.Text_ViewActivity"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".textview.Edit_TextViewActivity"
+            android:name=".view.Edit_TextViewActivity"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".textview.Toggle_buttonActivity"
+            android:name=".view.Toggle_buttonActivity"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".textview.Text_ClockActivity"
+            android:name=".view.Text_ClockActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".view.Image_ViewActivity"
             android:launchMode="singleTop">
         </activity>
     </application>

@@ -27,4 +27,7 @@
     <string name="textclock_test_0">时钟显示</string>
     <string name="textclock_test_1">开始</string>
     <string name="textclock_test_2">停止</string>
+    <string name="imageview_test_0">增大透明度度</string>
+    <string name="imageview_test_1">减小透明度度</string>
+    <string name="imageview_test_2">下一张</string>
     </resources>

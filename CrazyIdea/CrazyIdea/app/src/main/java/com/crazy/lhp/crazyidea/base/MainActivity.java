@@ -1,21 +1,19 @@
 package com.crazy.lhp.crazyidea.base;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.crazy.lhp.crazyidea.R;
 import com.crazy.lhp.crazyidea.custom.CustomActivity;
 import com.crazy.lhp.crazyidea.layout.FrameActivity;
 import com.crazy.lhp.crazyidea.layout.GridTestLayout;
-import com.crazy.lhp.crazyidea.textview.Edit_TextViewActivity;
-import com.crazy.lhp.crazyidea.textview.Text_ClockActivity;
-import com.crazy.lhp.crazyidea.textview.Text_ViewActivity;
-import com.crazy.lhp.crazyidea.textview.Toggle_buttonActivity;
+import com.crazy.lhp.crazyidea.view.Edit_TextViewActivity;
+import com.crazy.lhp.crazyidea.view.Text_ClockActivity;
+import com.crazy.lhp.crazyidea.view.Text_ViewActivity;
+import com.crazy.lhp.crazyidea.view.Toggle_buttonActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
