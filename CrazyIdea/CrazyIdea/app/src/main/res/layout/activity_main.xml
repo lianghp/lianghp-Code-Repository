@@ -83,7 +83,7 @@
                     android:id="@+id/btn_tl_test_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"/>
+                    android:text="@string/imageview_test_3"/>
                 <TableRow>
                     <Button
                         android:id="@+id/btn_tl_tr_test_7"

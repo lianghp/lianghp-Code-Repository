@@ -30,4 +30,5 @@
     <string name="imageview_test_0">增大透明度度</string>
     <string name="imageview_test_1">减小透明度度</string>
     <string name="imageview_test_2">下一张</string>
+    <string name="imageview_test_3">图片查看器</string>
     </resources>

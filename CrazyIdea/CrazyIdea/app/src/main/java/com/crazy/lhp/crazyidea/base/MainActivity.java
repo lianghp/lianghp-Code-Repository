@@ -11,6 +11,7 @@ import com.crazy.lhp.crazyidea.custom.CustomActivity;
 import com.crazy.lhp.crazyidea.layout.FrameActivity;
 import com.crazy.lhp.crazyidea.layout.GridTestLayout;
 import com.crazy.lhp.crazyidea.view.Edit_TextViewActivity;
+import com.crazy.lhp.crazyidea.view.Image_ViewActivity;
 import com.crazy.lhp.crazyidea.view.Text_ClockActivity;
 import com.crazy.lhp.crazyidea.view.Text_ViewActivity;
 import com.crazy.lhp.crazyidea.view.Toggle_buttonActivity;
@@ -26,6 +27,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button btn_tl_tr_test_4;//模仿登陆界面
     private Button btn_tl_tr_test_5;//横竖屏切换
     private Button btn_tl_tr_test_6;//时钟显示
+    private Button btn_tl_test_3;//图片查看器
 
 
     @Override
@@ -75,48 +77,54 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btn_tl_tr_test_4 = (Button)findViewById(R.id.btn_tl_tr_test_4);
         btn_tl_tr_test_5 = (Button)findViewById(R.id.btn_tl_tr_test_5);
         btn_tl_tr_test_6 = (Button)findViewById(R.id.btn_tl_tr_test_6);
+        btn_tl_test_3 = (Button)findViewById(R.id.btn_tl_test_3);
 
-        btn_tl_test_1.setOnClickListener(this);
-        btn_tl_tr_test_1.setOnClickListener(this);
-        btn_tl_tr_test_2.setOnClickListener(this);
-        btn_tl_test_2.setOnClickListener(this);
-        btn_tl_tr_test_4.setOnClickListener(this);
-        btn_tl_tr_test_5.setOnClickListener(this);
+        btn_tl_test_3.setOnClickListener(this);
         btn_tl_tr_test_6.setOnClickListener(this);
+        btn_tl_tr_test_5.setOnClickListener(this);
+        btn_tl_tr_test_4.setOnClickListener(this);
+        btn_tl_test_2.setOnClickListener(this);
+        btn_tl_tr_test_2.setOnClickListener(this);
+        btn_tl_tr_test_1.setOnClickListener(this);
+        btn_tl_test_1.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         int Id = view.getId();
         switch (Id){
-            case R.id.btn_tl_test_1:
-                Log.d(TAG, "MainActivity initwidget()");
-                Intent intent = new Intent(this, CustomActivity.class);
-                startActivity(intent);
+            case R.id.btn_tl_test_3:
+                Intent intent7 = new Intent(this, Image_ViewActivity.class);
+                startActivity(intent7);
                 break;
-            case R.id.btn_tl_tr_test_1:
-                Intent intent1 = new Intent(this, FrameActivity.class);
-                startActivity(intent1);
-                break;
-            case R.id.btn_tl_tr_test_2:
-                Intent intent2 = new Intent(this, GridTestLayout.class);
-                startActivity(intent2);
-                break;
-            case R.id.btn_tl_test_2:
-                Intent intent3 = new Intent(this, Text_ViewActivity.class);
-                startActivity(intent3);
-                break;
-            case R.id.btn_tl_tr_test_4:
-                Intent intent4 = new Intent(this, Edit_TextViewActivity.class);
-                startActivity(intent4);
+            case R.id.btn_tl_tr_test_6:
+                Intent intent6 = new Intent(this, Text_ClockActivity.class);
+                startActivity(intent6);
                 break;
             case R.id.btn_tl_tr_test_5:
                 Intent intent5 = new Intent(this, Toggle_buttonActivity.class);
                 startActivity(intent5);
                 break;
-            case R.id.btn_tl_tr_test_6:
-                Intent intent6 = new Intent(this, Text_ClockActivity.class);
-                startActivity(intent6);
+            case R.id.btn_tl_tr_test_4:
+                Intent intent4 = new Intent(this, Edit_TextViewActivity.class);
+                startActivity(intent4);
+                break;
+            case R.id.btn_tl_test_2:
+                Intent intent3 = new Intent(this, Text_ViewActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.btn_tl_tr_test_2:
+                Intent intent2 = new Intent(this, GridTestLayout.class);
+                startActivity(intent2);
+                break;
+            case R.id.btn_tl_tr_test_1:
+                Intent intent1 = new Intent(this, FrameActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.btn_tl_test_1:
+                Log.d(TAG, "MainActivity initwidget()");
+                Intent intent = new Intent(this, CustomActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
