@@ -1,0 +1,308 @@
+/**
+     * 初始化周边分类检索控件
+     *
+     * @param totalData 检索分类数据
+     */
+    private void initWidget(List<HashMap<String, List<HashMap<String, String>>>> totalData) {
+        svNearbySearch.setVisibility(View.VISIBLE);
+        btnSearchTitleConfirm.requestFocus();
+        Spanned spanned = Html.fromHtml("在<font color='#7C9BC4'>"+searchPresenter.state.mPointName +"</font>周边查找地点");
+        etSearchTitleKey.setHint(spanned);
+
+        int gridWidth = -1;
+        int gridLeft = -1;
+        {
+            Rect rect = new Rect();
+            if (findViewById(R.id.ll_search_title).getGlobalVisibleRect(rect)) {
+                gridWidth = rect.width();
+                gridLeft = rect.left - rl_activity_search.getPaddingLeft();
+            }
+        }
+
+        for (int i = 0; i < totalData.size(); i++) {
+            HashMap totalMaps = totalData.get(i);
+            Set totalSet = totalMaps.keySet();
+            Iterator totalIter = totalSet.iterator();
+
+            while (totalIter.hasNext()) {
+
+                String totalKey = (String) totalIter.next();
+                Log.e(TAG, "totalKey : " + totalKey);
+
+                View lineView = new View(this);
+                LinearLayout.LayoutParams layoutlineView = new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        1);
+                lineView.setLayoutParams(layoutlineView);
+                lineView.setBackgroundColor(getResources().getColor(R.color.color_gray2));
+                llSvNearbySearch.addView(lineView);
+
+                TextView titleView = new TextView(this);
+                LinearLayout.LayoutParams layoutTitle = new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+                layoutTitle.setMargins(18, 0, 0, 0);
+                titleView.setLayoutParams(layoutTitle);
+                titleView.setText(totalKey);
+                int idtitleView = titleView.generateViewId();
+                titleView.setId(idtitleView);
+                titleView.setTextColor(getResources().getColor(R.color.text_color_white));
+                llSvNearbySearch.addView(titleView);
+
+                List<HashMap<String, String>> classifyMaps = (List<HashMap<String, String>>) totalMaps.get(totalKey);
+
+                NoScroolGridView classifyGridView = new NoScroolGridView(this);
+                LinearLayout.LayoutParams layoutGridView = new LinearLayout.LayoutParams(
+                        gridWidth,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+                int idclassifyGridView = classifyGridView.generateViewId();
+                titleView.setId(idclassifyGridView);
+                layoutGridView.leftMargin = gridLeft;
+//                layoutGridView.rightMargin = 120;
+                layoutGridView.bottomMargin = 20;
+                layoutGridView.gravity = Gravity.LEFT;
+                classifyGridView.setGravity(Gravity.CENTER);
+
+                classifyGridView.setHorizontalSpacing(20);
+                classifyGridView.setNumColumns(3);
+//                classifyGridView.setBackgroundColor(getResources().getColor(R.color.white_45));
+                classifyGridView.setVerticalSpacing(10);
+                classifyGridView.setStretchMode(GridView.STRETCH_COLUMN_WIDTH);
+                classifyGridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
+                classifyGridView.setLayoutParams(layoutGridView);
+                classifyGridView.setAdapter(new GridViewAdapter(this, classifyMaps));
+                llSvNearbySearch.addView(classifyGridView);
+
+                classifyGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Log.e(TAG, " view.getTag : " + view.getTag() + " position : " + position + " id : " + id);
+                        searchPresenter.startSearch("",view.getTag()+"");
+                        dialogview.showDialog("搜索中...");
+                    }
+                });
+            }
+        }
+
+    }
+
+    /**
+     * 自定义gridView 实现根据数据自动计算控件高度
+     */
+    public class NoScroolGridView extends GridView {
+
+        public NoScroolGridView(Context context) {
+            super(context);
+        }
+
+        public NoScroolGridView(Context context, AttributeSet attrs) {
+            super(context, attrs);
+        }
+
+        public NoScroolGridView(Context context, AttributeSet attrs, int defStyle) {
+            super(context, attrs, defStyle);
+        }
+
+        //不出现滚动条
+        @Override
+        public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
+            int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+            super.onMeasure(widthMeasureSpec, expandSpec);
+        }
+    }
+
+    /**
+     * Grid View适配器
+     */
+    private class GridViewAdapter extends BaseAdapter {
+
+        private Context context;
+        private List<HashMap<String, String>> soureceData;
+
+        public GridViewAdapter(Context context, List<HashMap<String, String>> soureceData) {
+            this.context = context;
+            this.soureceData = soureceData;
+        }
+
+        @Override
+        public int getCount() {
+            return soureceData.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            HashMap itemMap = soureceData.get(position);
+            Set set1 = itemMap.keySet();
+            Iterator itemIter = set1.iterator();
+            String itemKey = (String) itemIter.next();
+
+            TextView result = new TextView(context);
+            result.setText(itemKey);
+            result.setTag(itemMap.get(itemKey));
+            result.setTextColor(getResources().getColor(R.color.white));
+            result.setLayoutParams(new AbsListView.LayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)));
+            result.setGravity(Gravity.CENTER);
+//            result.setBackgroundResource(R.mipmap.bg_btn_nearby_search); //设置背景颜色
+            result.setBackground(getResources().getDrawable(R.drawable.search_category));
+            return result;
+        }
+    }
+	
+	
+	
+	
+	data:
+	
+	
+List<HashMap<String, String>> soureceData1 = new ArrayList<>();//存储每一个分类的数据 、、、、、、、、
+    String[] data1 = {"加油站", "洗车", "汽车维修", "服务区", "加气站", "汽车站", "火车站", "飞机场", "中石化"};
+    String[] code1 = {"0101", "010500", "030000", "1803", "010300", "150400", "1502", "1501", "010101"};
+
+    public List<HashMap<String, String>> getSoureceData1() {
+        Log.e(TAG, " soureceData : " );
+        for (int i = 0; i < data1.length; i++) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put(data1[i], code1[i]);
+            soureceData1.add(map);
+        }
+//        Log.e(TAG, " soureceData : " + soureceData1);
+        return soureceData1;
+    }
+
+    List<HashMap<String, String>> soureceData2 = new ArrayList<>();//
+    String[] data2 = {"中餐", "快餐", "火锅", "西餐", "咖啡厅", "川菜", "韩国料理", "日本料理"};
+    String[] code2 = {"0501", "0503", "050117", "050201", "0505", "050102", "050203", "050202"};
+
+    public List<HashMap<String, String>> getSoureceData2() {
+        for (int i = 0; i < data2.length; i++) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put(data2[i], code2[i]);
+            soureceData2.add(map);
+        }
+//        Log.e(TAG, " soureceData : " + soureceData2);
+        return soureceData2;
+    }
+
+    List<HashMap<String, String>> soureceData3 = new ArrayList<>();//
+    String[] data3 = {"宾馆", "星级酒店", "酒店", "快捷酒店", "三星级", "四星级", "五星级"};
+    String[] code3 = {"0101", "010102|010103|010104", "0101", "010105", "010104", "010103", "010102"};
+
+    public List<HashMap<String, String>> getSoureceData3() {
+        for (int i = 0; i < data3.length; i++) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put(data3[i], code3[i]);
+            soureceData3.add(map);
+        }
+//        Log.e(TAG, " soureceData : " + soureceData3);
+        return soureceData3;
+    }
+
+    List<HashMap<String, String>> soureceData4 = new ArrayList<>();//、、、、。
+    String[] data4 = {"风景名胜", "公园广场", "游乐场", "动物园", "博物馆"};
+    String[] code4 = {"110200", "110100", "080501", "110102", "140100"};
+
+    public List<HashMap<String, String>> getSoureceData4() {
+        for (int i = 0; i < data4.length; i++) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put(data4[i], code4[i]);
+            soureceData4.add(map);
+        }
+//        Log.e(TAG, " soureceData : " + soureceData4);
+        return soureceData4;
+    }
+
+    List<HashMap<String, String>> soureceData5 = new ArrayList<>();//、、、、、、
+    String[] data5 = {"超市", "商场", "药店", "便利店", "步行街", "家具建材", "苏宁"};
+    String[] code5 = {"060400", "060100", "0906", "0602", "061001", "060601", "060304"};
+
+    public List<HashMap<String, String>> getSoureceData5() {
+        for (int i = 0; i < data5.length; i++) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put(data5[i], code5[i]);
+            soureceData5.add(map);
+        }
+//        Log.e(TAG, " soureceData : " + soureceData5);
+        return soureceData5;
+    }
+
+    List<HashMap<String, String>> soureceData6 = new ArrayList<>();//、、、、、、。
+    String[] data6 = {"网吧", "KTV", "电影院", "洗浴", "台球", "酒吧", "体育馆"};
+    String[] code6 = {"080308", "080302", "080601", "071400", "080113", "080304", "080101"};
+
+    public List<HashMap<String, String>> getSoureceData6() {
+        for (int i = 0; i < data6.length; i++) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put(data6[i], code6[i]);
+            soureceData6.add(map);
+        }
+//        Log.e(TAG, " soureceData : " + soureceData6);
+        return soureceData6;
+    }
+
+    List<HashMap<String, String>> soureceData7 = new ArrayList<>();//、、、、、、、、、。
+    String[] data7 = {"银行", "ATM", "医院", "药店", "卫生间", "邮局", "快递", "美容美发", "电讯营业厅", "宠物"};
+    String[] code7 = {"1601", "1603", "0902", "0906", "2003", "070400", "070500", "071100", "0706", "060502|061211|090701"};
+
+    public List<HashMap<String, String>> getSoureceData7() {
+        for (int i = 0; i < data7.length; i++) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put(data7[i], code7[i]);
+            soureceData7.add(map);
+        }
+//        Log.e(TAG, " soureceData : " + soureceData7);
+        return soureceData7;
+    }
+
+    List<HashMap<String, List<HashMap<String, String>>>> totalData = new ArrayList<>();
+
+    public List<HashMap<String, List<HashMap<String, String>>>> getTotalData() {
+
+        getSoureceData();
+        getSoureceData1();
+        getSoureceData2();
+        getSoureceData3();
+        getSoureceData4();
+        getSoureceData5();
+        getSoureceData6();
+        getSoureceData7();
+
+        HashMap<String, List<HashMap<String, String>>> maps = new HashMap<>();
+        maps.put("常用", soureceData);
+        totalData.add(maps);
+        HashMap<String, List<HashMap<String, String>>> maps1 = new HashMap<>();
+        maps1.put("出行", soureceData1);
+        totalData.add(maps1);
+        HashMap<String, List<HashMap<String, String>>> maps2 = new HashMap<>();
+        maps2.put("餐饮", soureceData2);
+        totalData.add(maps2);
+        HashMap<String, List<HashMap<String, String>>> maps3 = new HashMap<>();
+        maps3.put("住宿", soureceData3);
+        totalData.add(maps3);
+        HashMap<String, List<HashMap<String, String>>> maps4 = new HashMap<>();
+        maps4.put("出游", soureceData4);
+        totalData.add(maps4);
+        HashMap<String, List<HashMap<String, String>>> maps5 = new HashMap<>();
+        maps5.put("购物", soureceData5);
+        totalData.add(maps5);
+        HashMap<String, List<HashMap<String, String>>> maps6 = new HashMap<>();
+        maps6.put("娱乐", soureceData6);
+        totalData.add(maps6);
+        HashMap<String, List<HashMap<String, String>>> maps7 = new HashMap<>();
+        maps7.put("生活", soureceData7);
+        totalData.add(maps7);
+        Log.e(TAG, "totalData " + totalData);
+        return totalData;
+    }	
+	
